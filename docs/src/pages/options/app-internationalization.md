@@ -117,6 +117,32 @@ export default {
 </script>
 ```
 
+#or 
+
+```html
+<template>
+  <q-page>
+    <q-btn :label="$t('mykey2')">
+    {{ $t('mykey1') }}
+    <span v-html="content"></span>
+  </q-page>
+</template>
+
+<script>
+import { defineComponent, ref } from 'vue'
+import { i18n } from '../boot/i18n'
+
+export default {
+  setup () {
+    return {
+      content: i18n.global.t('mykey3'),
+    }
+  }
+}
+</script>
+```
+
+
 1. `mykey1` in HTML body
 2. `mykey2` in attribute
 3. `mykey3` programmatically
